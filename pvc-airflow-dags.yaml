@@ -1,0 +1,13 @@
+#persistent volume claim for Dags files
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: airflow-dags
+spec:
+  storageClassName: azureblob-fuse-premium
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi   
+  volumeName: airflow-dags
